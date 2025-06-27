@@ -11,6 +11,7 @@
 - [Feature Implementation](#feature-implementation)
 - [Integration Points](#integration-points)
 - [Agent System Design](#agent-system-design)
+- [Case Details and Precedent Management](#case-details-and-precedent-management)
 - [Development Roadmap](#development-roadmap)
 - [Performance Benchmarks](#performance-benchmarks)
 - [Security & Privacy](#security--privacy)
@@ -19,26 +20,25 @@
 
 ## Project Overview
 
-LegalHelp is an accessible, on-device AI utility designed specifically for Indian law students and non-technical legal professionals. It transforms legal materials into structured briefs and study materials without requiring technical expertise or cloud connectivity. Built with a focus on simplicity and educational value, it leverages on-device AI to deliver a privacy-focused legal assistant that enhances legal education and early practice.
+LegalHelp is a revolutionary on-device AI utility for legal professionals that transforms scanned legal materials into fully structured briefs without requiring cloud connectivity. Built specifically for the Snapdragon® X Elite platform, it leverages on-device AI to deliver an end-to-end privacy-focused legal assistant that significantly reduces document preparation time while ensuring client confidentiality.
 
 ### Vision Statement
-To empower India's legal diaspora with privacy-first, easy-to-use AI tools that improve legal education outcomes and practice efficiency while maintaining complete data sovereignty.
+To empower legal professionals with privacy-first, AI-driven tools that dramatically increase productivity and document quality while maintaining complete data sovereignty.
 
 ### Target Users
-- Law students across Indian universities
-- Early-career legal professionals
-- Legal educators and professors
-- Rural and small-town practitioners with limited technical exposure
-- Legal aid clinics and non-profit organizations
+- Solo practitioners and small law firms
+- Legal clinics and pro-bono attorneys
+- In-house counsels
+- Law school students and professors
+- Paralegals and legal assistants
 
 ### Core Value Proposition
-- **Simplified Complexity**: Legal tools designed for non-technical users
-- **Student-Centric**: Features aligned with Indian legal curriculum and exam needs
 - **Privacy-First**: 100% on-device processing with no data transmission
-- **Low Resource Requirements**: Optimized for common student devices
-- **Academic Support**: IRAC formatting, case briefs, and exam preparation tools
-- **Complete Offline Operation**: Full functionality without internet connectivity
-- **Indian Legal Context**: Built for Indian laws, courts, and legal education system
+- **Ultra-Low Latency**: Generate briefs in under 1 second per page
+- **Structured Legal Output**: IRAC (Issue, Rule, Application, Conclusion) formatting
+- **Integrated Workflow**: From camera capture to final document export
+- **Multi-Function**: Document analysis, brief creation, research assistance, and more
+- **Complete Offline Operation**: No internet connection required for core functionality
 
 ## Core Technologies
 
@@ -298,68 +298,77 @@ LegalHelp's interface is specifically designed for legal professionals with limi
    - Breadcrumb navigation for complex document structures
    - Recent items and favorites for quick access to common resources
 
-#### 3. **Terminology Adaptation**
-   - "Research Assistant" instead of "AI Search"
-   - "Brief Builder" rather than "Document Generator"
-   - "Precedent Library" instead of "Template Database"
-   - "Case Notes" rather than "Metadata"
+#### 3. **Indian Legal Terminology**
+   - "Research Sahayak" (Assistant) instead of "AI Search"
+   - "Judgment Drafting Tool" rather than "Document Generator"
+   - "Precedent Pustika" (Library) instead of "Template Database"
+   - "Case Tippani" (Notes) rather than "Metadata"
+   - Bilingual labeling in Hindi/English for key functions
+   - Using familiar terminology from Indian legal education and practice
 
-#### 4. **Visual Design Elements**
-   - High contrast text and interface elements for readability
-   - Traditional legal color palette (navy, maroon, charcoal) with modern touches
-   - Clear visual hierarchy with emphasis on document content
-   - Space-efficient layout optimized for document comparison and reference
+#### 4. **Visual Design for Indian Context**
+   - High contrast text optimized for diverse lighting conditions in Indian courtrooms
+   - Color palette inspired by Indian court tradition with subtle cultural elements
+   - Clear visual hierarchy emphasizing document content in standard Indian legal format
+   - Space-efficient layout considering common device types used by Indian law students
+   - Support for Indian script rendering in both interface and documents
+   - Visual markers for different courts and jurisdictions using familiar Indian symbology
 
-#### 5. **Task Completion Support**
-   - Clear progress indicators for multi-step processes
-   - Estimated completion times for research and generation tasks
-   - Confirmation of successful actions with appropriate detail
-   - Contextual suggestions for next steps based on workflow patterns
+#### 5. **Student-Focused Task Support**
+   - Clear progress indicators with time estimates suited to Indian court document complexities
+   - Guided workflows for common Indian legal documents with step-by-step assistance
+   - Educational tips integrated into the workflow for law students
+   - Contextual suggestions based on Indian legal procedure and document requirements
+   - Built-in timers for procedural deadlines in Indian courts
+   - Visual cues aligned with standard Indian legal textbook organization
 
-#### 6. **Error Handling Approach**
-   - Plain language explanations of issues
-   - Specific recovery suggestions with one-click implementation
-   - Prevention of common errors through input validation
-   - Learning system that adapts to individual user patterns and mistakes
+#### 6. **India-Specific Error Handling**
+   - Plain language explanations in both English and Hindi
+   - Specific recovery suggestions with context-aware help for Indian legal procedures
+   - Prevention of common errors in Indian legal filings through input validation
+   - Specific guidance for state-wise jurisdictional requirements
+   - Focus on educational corrections for law students
 
-### User Testing with Indian Legal Professionals
+### User Testing with Indian Legal Stakeholders
 
-To ensure the interface meets the needs of its target users, LegalHelp's design will undergo iterative testing with:
+To ensure the interface meets the specific needs of Indian users, LegalHelp's design will undergo iterative testing with:
 
-1. **Senior Advocates** with minimal technology exposure
-2. **Rural Practice Lawyers** with varying technology access
-3. **Legal Educators** who can evaluate learning curve challenges
-4. **Court Staff** who interact with various document formats
-5. **Law Students** who represent future users with different expectations
+1. **Law College Students** from diverse institutions across India
+2. **Junior Advocates** in their first years of practice
+3. **Legal Educators** from National Law Universities and state law colleges
+4. **Rural Practitioners** with varying levels of technical exposure
+5. **Court Staff** familiar with filing requirements in different jurisdictions
 
 Feedback from these testing sessions will directly inform refinements to the interface, with particular attention to:
 
-- Terminology clarity across different practice areas
-- Navigation efficiency for time-sensitive legal tasks
-- Comfort with AI-assisted features and transparency preferences
-- Adaptation needs for different regions and language preferences
+- Terminology clarity across different Indian practice areas and jurisdictions
+- Navigation efficiency for time-sensitive legal tasks in Indian court contexts
+- Comfort level of students and junior advocates with the guided features
+- Regional adaptation needs for different states and language preferences
+- Effectiveness for educational purposes in Indian law curriculum
 
 By maintaining this user-centered design approach throughout development, LegalHelp will deliver a tool that feels like a natural extension of existing legal practice rather than a technological disruption.
 
 ## Feature Implementation
 
-### 1. Student-Focused Legal Research
-The legal research component is designed specifically for law students and early-career legal professionals, with an intuitive interface requiring minimal technical expertise.
+### 1. Advanced Legal Research Integration
+The legal research component uses a Fetch.ai agent trained on legal corpora with specialized capabilities. This feature transforms how attorneys access and utilize legal information without requiring internet connectivity.
 
 - **Offline Legal Database**:
-  - Pre-downloaded Indian case law focusing on landmark Supreme Court and High Court cases
-  - Core Indian statutes and regulations stored in a space-efficient format (10-20GB)
-  - Semester-aligned updates that match academic calendars
-  - Organized by subject matter following standard law school curriculum structure
-  - Simple search capability with natural language understanding
-  - Topic-based organization to support exam preparation and assignments
+  - Pre-downloaded jurisdiction-specific case law spanning federal and state levels
+  - Comprehensive statutes and regulations stored in vector-indexed database (50-100GB)
+  - Quarterly updates via secure, verified channels when connected to trusted networks
+  - Priority-based storage management that keeps frequently used references readily accessible
+  - Semantic search capability that understands legal concepts, not just keywords
+  - Customizable database focus based on practice areas (e.g., criminal, family, corporate law)
 
 - **Citation Manager**:
-  - Simplified citation formatting for Indian legal documents
-  - Standard Indian legal citation styles with educational guidance
-  - Citation validation against core database
-  - Support for footnotes and endnotes in academic papers
-  - Basic precedent tracking for case history
+  - Automatic citation formatting with support for over 15 jurisdictional styles
+  - Complete Bluebook, APA, Chicago, and custom citation styles built-in
+  - Verification of citations against source database with confidence scoring
+  - "Pin Cite" feature for accurate page and paragraph references
+  - Citation chain analysis to track precedential strength
+  - Historical citation tracking to identify overruled or questioned cases
 
 ```python
 # Pseudocode for citation manager
@@ -381,200 +390,282 @@ class CitationManager:
         )
 ```
 
-### 2. Study Group Collaboration
-LegalHelp enables secure collaboration for law study groups and project teams with straightforward sharing features that don't require technical expertise.
+### 2. Basic Collaboration for Students
+LegalHelp provides simple document sharing capabilities designed for law students working on group assignments and junior practitioners in small firms.
 
-- **Simplified Sharing**:
-  - Basic device-to-device document sharing using secure connections
-  - Password protection for sensitive documents
-  - Simple QR code sharing for quick document exchange
-  - Study group creation with basic access controls
-  - Limited to local networks for enhanced privacy
-  - Document access logs for transparency
+- **Simple Document Sharing**:
+  - Basic document sharing via Wi-Fi Direct or Bluetooth
+  - Local device-to-device transfer with standard encryption
+  - QR code sharing for easy document exchange
+  - Simple password protection for sensitive documents
+  - Focused on study group and small team scenarios
+  - Basic activity logging for document history
+  - Designed for law school project collaboration
 
-- **Annotation System**:
-  - Basic annotations with student-friendly color coding
-  - Version tracking for group assignments
-  - Simple role assignments (owner and contributor)
-  - Visual identification of who made which comments
-  - Comment threading for discussion points
-  - Export of annotated documents for submission
+- **Basic Annotation System**:
+  - Simple comments and highlights on shared documents
+  - Basic version tracking with dated snapshots
+  - Simple access controls (view or edit permissions)
+  - Color-coded highlights by team member
+  - Focus on educational use and group study
+  - Text annotations for feedback and suggestions
+  - Basic merging of edits from multiple users
+  - Export option for submitting group assignments
 
-### 3. Assignment & Document Automation
-Simplified document tools focused on common law student needs and early-career legal professionals.
+### 3. Workflow Automation
+Document workflows are automated using a sophisticated agent-based approach that handles complex legal document processing tasks without requiring user intervention or technical knowledge.
 
-- **Case Brief Generator**:
-  - Creates structured case briefs from judgments using IRAC format
-  - Identifies key facts, issues, rules, and holdings
-  - Extracts critical reasoning in plain language
-  - Generates concise summaries ideal for exam preparation
-  - Highlights key legal principles for quick revision
-  - Creates study flashcards from important points
+- **Contract Analysis**:
+  - Identifies key clauses, obligations, and risks with precision accuracy
+  - Extracts parties, dates, and critical terms into structured datasets
+  - Flags potential issues and ambiguities with explanations in plain language
+  - Risk scoring for contract provisions based on jurisdiction-specific standards
+  - Automatic identification of non-standard clauses compared to industry norms
+  - Summary dashboard showing key contract metrics (term length, renewal conditions, etc.)
+  - Timeline generation showing critical dates and dependencies
+  - Obligation tracking system for monitoring contract compliance
 
 - **Document Comparison**:
-  - Basic redlining and change tracking
-  - Clear highlighting of substantive changes
-  - Simple summaries of what has changed between versions
-  - Standard legal document comparison features
-  - Before/after view for straightforward review
+  - Sophisticated semantic and structural diff analysis beyond simple text changes
+  - Color-coded highlighting that distinguishes substantive changes vs. formatting changes
+  - Summary of modifications with legal significance assessment written in plain English
+  - Redline generation that follows standard legal document conventions
+  - Material change detection that identifies legally significant modifications
+  - Visual comparison timeline showing document evolution across multiple versions
+  - Impact analysis showing how changes affect contract balance and risk profile
 
-### 4. Essential Indian Language Support
-The system supports the most common languages used in Indian legal education and early practice with streamlined functionality.
+### 4. Multi-Language Support for Indian Legal Context
+The system supports key Indian languages through specialized models designed for the multilingual Indian legal practice, enabling seamless work across different state jurisdictions and courts.
 
-- **Focused Language Support**:
-  - OCR for Hindi, English, and one regional language based on user location
-  - Core legal terminology translation between English and Hindi
-  - Basic recognition of mixed-language documents
-  - Support for essential legal symbols and notations
-  - Simplified format preservation for standard legal documents
+- **Indian Multilingual OCR**:
+  - Focused support for Hindi, English, and 6 major Indian regional languages (Tamil, Bengali, Telugu, Marathi, Gujarati, and Kannada)
+  - Specialized legal terminology recognition for Indian courts and legal procedures
+  - Script recognition for various Indian writing systems (Devanagari, Bengali, Tamil, etc.)
+  - Handling of bilingual documents as commonly required in Indian courts
+  - Recognition of Indian legal symbols, court seals, and official notations
+  - Format preservation for standard Indian legal document layouts
+  - Translation support between official Indian languages with legal terminology preservation
 
-- **Key Jurisdiction Templates**:
-  - Templates for major courts (Supreme Court, High Courts)
-  - Standard citation styles for Indian legal documents
-  - Basic document formatting for common legal submissions
-  - Simplified header/footer conventions
+- **Indian Jurisdiction Templates**:
+  - Comprehensive library of document formats for Supreme Court, High Courts, and District Courts
+  - Indian citation styles (SCC, AIR, SCR, etc.) following different court requirements
+  - Legal terminology adaptation based on state jurisdiction and practice area
+  - Court-specific formatting rules aligned with Indian judiciary requirements
+  - Header/footer conventions matching expectations of different Indian courts
+  - Digital signature and stamp placement according to Indian e-Courts standards
+  - Date formatting adjusted to Indian standard formats automatically
 
-### 5. Academic Writing Assistant
-A focused review tool designed particularly for law students working on assignments, moot court submissions, and exam preparation.
+### 5. AI-Powered Draft Review
+LegalHelp uses specialized models for draft improvement that act like an experienced senior attorney reviewing your work, providing substantive feedback while ensuring technical compliance.
 
-- **Argument Structure Feedback**:
-  - Checks IRAC structure in legal writing assignments
-  - Suggests improvements to legal reasoning with educational explanations
-  - Highlights areas where additional case citations would strengthen arguments
-  - Provides basic feedback on logical flow and organization
-  - Offers straightforward language improvement suggestions
-  - Flags common legal writing errors
+- **Argument Enhancement**:
+  - Identifies weak arguments and suggests improvements with alternative phrasings
+  - Proposes additional supporting cases or principles ranked by relevance and strength
+  - Checks logical flow of reasoning with step-by-step argument mapping
+  - Detects potential counterarguments and suggests preemptive responses
+  - Provides readability assessment tailored to judicial preferences
+  - Offers sentence structure variation to improve persuasiveness
+  - Identifies overused phrases and suggests powerful alternatives
+  - Evaluates emotional tone and adjusts for appropriate judicial voice
 
-- **Format Checker**:
-  - Verifies basic formatting for academic legal submissions
-  - Reviews citation format against standard Indian legal citation guidelines
-  - Confirms proper structure for common assignment types
-  - Validates section organization for different document types
-  - Performs word count checks against assignment requirements
+- **Compliance Checker**:
+  - Verifies compliance with court-specific formatting requirements down to margin sizes
+  - Performs exhaustive citation accuracy and completeness verification
+  - Ensures proper legal language and terminology based on jurisdiction
+  - Validates all cross-references within the document
+  - Detects prohibited content types for specific courts or judges
+  - Evaluates document against specific court rules updated quarterly
+  - Checks for required sections and components by document type
+  - Word/page count verification for courts with strict limits
 
-### 6. Law Student Success Tools
-Enhanced educational features specifically designed for Indian law students, with a focus on exam preparation, moot court success, and foundational legal skills development.
+### 6. Legal Education Tools
+The system includes comprehensive educational features for legal training, designed to help both new attorneys and experienced practitioners improve their legal writing and reasoning skills.
 
-- **IRAC Study Assistant**:
-  - Interactive tutorials on legal reasoning with Indian case examples
-  - Practice exercises for different levels of law school (1st-5th year)
-  - Visual breakdown of model answers for common exam questions
-  - Step-by-step guidance for structuring answers to different question types
-  - Timed practice mode for exam preparation
-  - Subject-specific modules aligned with standard Indian law curriculum
-  - Feedback system highlighting areas for improvement
+- **IRAC Training Mode**:
+  - Interactive, hands-on tutorials on legal reasoning structure with real-world examples
+  - Detailed, constructive feedback on brief composition and organization
+  - Progressive difficulty levels for skill development from 1L to senior associate
+  - Visual mapping of argument structure to reinforce IRAC principles
+  - Before/after examples showing improvement opportunities
+  - Personalized weak point identification and targeted exercises
+  - Timed practice sessions simulating real-world deadline pressure
+  - Specialized modules for different practice areas (litigation, transactional, etc.)
 
-- **Moot Court Preparation**:
-  - Templates for memorial preparation following standard formats
-  - Argument outline builders with proper legal structure
-  - Practice mode for oral arguments with timing and feedback
-  - Guides for addressing specific types of judicial questions
-  - Sample memorials from successful teams (anonymized)
-  - Oral argument examples with annotations
-  - Quick-access legal principles database for responses
+- **Mentorship Mode**:
+  - AI-guided feedback that mimics senior partner review comments
+  - Step-by-step document creation assistance with clarity for non-technical users
+  - Extensive library of well-structured legal documents from actual (anonymized) cases
+  - Side-by-side comparison with exemplary documents in similar cases
+  - "Watch and Learn" demonstrations of effective brief construction
+  - Contextual hints that explain the "why" behind legal writing conventions
+  - Practice-specific guidance from different legal specialties
+  - Progress tracking with measurable improvement metrics over time
 
-- **Internship & Placement Support**:
-  - Templates for common internship assignments
-  - Guidance for drafting legal opinions, memos, and research notes
-  - Basic court filing preparation assistance
-  - Interview preparation with common legal questions
-  - CV/Resume formatting for legal positions
+### 7. Basic Voice Dictation
+Voice features use simplified speech models trained on Indian legal dictation patterns, focusing on accuracy for Indian English and Hindi legal terminology.
 
-### 7. Basic Voice Features
-Simplified voice capabilities focused on note-taking and basic hands-free operation.
-
-- **Notes and Dictation**:
-  - Basic transcription with Indian legal terminology recognition
-  - Speech-to-text for simple note-taking and outlining
-  - Support for English and Hindi legal dictation
-  - Background noise filtering for classroom and library environments
-  - Simple paragraph and section creation through voice
-  - Quick recorded notes for study sessions
+- **Legal Dictation**:
+  - Specialized vocabulary focused on Indian legal terminology and common case names
+  - Basic command system for document navigation and editing
+  - Real-time transcription with simple paragraph formatting
+  - Standard punctuation appropriate for Indian legal writing
+  - Background noise filtering for typical Indian courtroom environments
+  - Basic accent adaptation for regional Indian English variations
+  - Optimized for shorter dictation sessions with automatic saving
+  - Support for dictation in Hindi and English with legal terminology
   
-- **Essential Voice Commands**:
-  - Basic app navigation through voice
-  - Simple document creation commands
-  - Straightforward search activation
-  - Voice-based document formatting commands
-  - Accessibility features for differently-abled users
+- **Voice Commands**:
+  - Simple voice control of essential app functions in Hindi and English
+  - Basic command interpretation for common document types
+  - Standard command set for frequent operations in Indian legal practice
+  - Single-step voice instructions for common tasks
+  - Visual confirmation for voice commands with Hindi/English feedback
+  - Simple voice interface designed for law students and practitioners
+  - Accessibility features for differently-abled legal professionals
+  - Focus on essential commands rather than complex sequences
 
-### 8. Academic Legal Updates
-Focused on keeping law students current with important legal developments relevant to their studies.
+### 8. Real-Time Legal Updates
+The system provides timely legal information through a sophisticated update mechanism that balances offline functionality with the need for current legal information.
 
-- **Student-Focused Updates**:
-  - Monthly updates aligned with academic terms
-  - Simple download of new materials when connected to Wi-Fi
-  - Focus on landmark cases and major legislative changes
-  - Priority given to cases and laws covered in standard curriculum
-  - Space-efficient storage of updates suitable for student devices
-  - Clear labeling of what's new in each subject area
-  
-- **Study-Relevant Notifications**:
-  - Basic alerts about new relevant cases for coursework
-  - Simple summaries of legal developments in plain language
-  - Highlighting of changes that impact commonly studied areas
-  - Exam-relevance indicators for new developments
-  - Subject-categorized updates for easy integration into notes
+- **Offline Update System**:
+  - Weekly curated packages of legal changes (downloaded only when connected to trusted networks)
+  - Cryptographic verification of update authenticity using multi-signature validation
+  - AI-driven prioritization of relevant updates based on user practice areas and active cases
+  - Delta updates that minimize download size while maximizing coverage
+  - Background download scheduling during non-working hours
+  - Local storage optimization that prunes outdated precedents
+  - Jurisdiction-specific update packages to minimize unnecessary data
+  - Update history log maintaining chain of database modifications
+  - Emergency update alerts for critical precedential shifts
 
-### 9. Contract Skills Builder
-A simplified tool focused on teaching contract analysis and drafting skills to law students.
+- **Change Notifications**:
+  - Intelligent alerts for legal developments specifically relevant to your active cases
+  - Comprehensive impact assessment showing how new decisions affect your arguments
+  - Concrete suggestions for brief modifications based on new precedents with redline options
+  - Relevance scoring to help prioritize response to legal changes
+  - "What Changed" summaries in plain language for quick understanding
+  - Citation health monitoring that flags when relied-upon cases are questioned
+  - Statute amendment tracking with before/after comparison
+  - Jurisdiction-specific regulatory change monitoring
 
-- **Contract Learning Module**:
-  - Interactive lessons on contract structure and clause functions
-  - Examples of standard clauses with explanations
-  - Basic identification of common contract issues
-  - Visual highlighting of important contract elements
-  - Simplified explanations of key terms and concepts
-  - Sample contracts with educational annotations
+### 9. Contract Analysis Tools
+LegalHelp includes essential contract analysis tools designed specifically for Indian legal practice, with simplified features that law students and practitioners can use without technical expertise.
 
-- **Basic Clause Library**:
-  - Collection of standard clauses with plain language explanations
-  - Simple alternatives for common contract provisions
-  - Educational notes on clause selection and modification
-  - Context for when different clauses are appropriate
+- **Basic Contract Assessment**:
+  - Analyzes standard Indian contract terms and highlights potential issues
+  - Provides simple explanations with references to Indian Contract Act provisions
+  - Offers basic risk assessment for common contract clauses in Indian context
+  - Generates simple talking points for client discussions
+  - Identifies potentially problematic terms based on Indian case precedents
+  - Focuses on educational value for law students learning contract drafting
+  - Highlights key contractual elements required under Indian law
+  - Provides plain language explanations of legal implications
 
-### 10. Law Student Study Assistant
-A privacy-focused study assistant that helps law students understand legal concepts, prepare for exams, and develop practical skills.
+- **Clause Library**:
+  - Offers standard clause templates based on Indian contract practice
+  - Includes plain language explanations of each clause's purpose and effect
+  - Provides alternative phrasings for common contractual provisions
+  - Analyzes basic clarity issues and suggests improvements
+  - Includes simple strength indicators for key protections
+  - Checks for essential clauses required under Indian law
+  - Evaluates basic enforceability issues based on Indian precedent
+  - Offers educational guidance on clause selection for different agreement types
 
-- **Study Companion**:
-  - Simple, jargon-free explanations of complex legal concepts
-  - Topic-based answers to common law school questions
-  - Guidance on case brief structure and analysis
-  - Help with understanding statute interpretation
-  - "Explain This" feature for breaking down complex legal language
-  - Assistance with finding relevant cases and laws for assignments
-  - Basic guidance on preparing for different types of law exams
-  - Continuity that remembers previous questions about related topics
+### 10. Indian Legal Assistant
+A privacy-focused legal assistant specializing in Indian law that acts as a knowledgeable senior law student rather than a technical interface, designed for ease of use by Indian legal professionals and law students.
 
-- **Learning Enhancement**:
-  - Adapts explanations to different learning styles
-  - Provides examples relevant to standard law curriculum
-  - Shows connections between related legal concepts
-  - Creates simple flash cards from conversations
-  - Suggests practice questions on topics being studied
-  - Helps consolidate understanding after each study session
-  - Tracks frequently asked topics to identify areas needing focus
+- **On-device Indian Legal Assistant**:
+  - Simple interface supporting both Hindi and English legal queries
+  - Context-aware responses referencing Indian cases, statutes and procedures
+  - Specialized knowledge covering core Indian practice areas (Constitutional, Criminal, Civil, Corporate, Family Law)
+  - Information about Indian procedural rules, court deadlines, and filing requirements
+  - "Explain This" feature for clarifying complex Indian legal concepts for students and clients
+  - Document guidance with reference to Indian legal drafting standards
+  - Basic task assistance for standard Indian legal documents (e.g., "prepare a standard vakalatnama")
+  - Basic memory of recent conversations for continuity
+  - Clear educational focus suitable for law students
+
+- **Indian Legal Knowledge**:
+  - Focus on Indian legal procedures and standards
+  - Basic improvement through simple user feedback
+  - Knowledge based on standard Indian legal textbooks and precedents
+  - Adaptation to common Indian legal terminology
+  - Support for major Indian practice areas with focus on student needs
+  - Standard formal legal writing style following Indian conventions
+  - Educational explanations of key concepts for law students
+  - Simplified interface with minimal customization needs
+  - Common Indian legal phrases and terminology assistance
+  - Basic information about major High Courts and their precedents
+
+### 11. Template-Based Document Creation
+
+LegalHelp provides a comprehensive template system focused on Indian legal documents, designed specifically for law students and early-career practitioners.
+
+- **Indian Legal Document Templates**:
+  - Extensive library of Indian legal document templates covering court filings, contracts, and notices
+  - Templates organized by jurisdiction (Supreme Court, High Courts, District Courts, Tribunals)
+  - Practice area categorization (Civil, Criminal, Constitutional, Corporate, etc.)
+  - Pre-formatted documents with proper margins, fonts, and spacing per Indian court requirements
+  - Built-in placeholders for client information, case details, and court references
+  - Simple guidance for completing each section without assuming prior experience
+  - Educational annotations explaining the purpose and importance of each section
+  - Version tracking for different Indian courts and jurisdictions
+
+- **Legal Notice Generator**:
+  - Simple wizard for creating legal notices for common situations in Indian practice
+  - Step-by-step guidance for creating notices under various Indian statutes
+  - Templates for consumer complaints, tenant notices, legal demands, and statutory notices
+  - Built-in compliance with Indian legal notice requirements
+  - Plain language examples that can be customized to specific situations
+  - Automated formatting according to Indian legal standards
+  - Bilingual notice generation (English + regional language) where required by law
+  - Calendar integration for tracking notice periods and deadlines
+
+### 12. Legal Research Enhancement
+
+LegalHelp includes research tools specifically designed for Indian legal research needs and student workflows.
+
+- **Natural Language Research**:
+  - Simple legal research interface using plain language questions
+  - Search across Indian case law using natural questions rather than technical queries
+  - Results organized by relevance to Indian legal practice
+  - Focus on educational value for law students learning research methods
+  - Special highlighting of landmark judgments and leading cases
+  - Automatic extraction of relevant legal principles
+  - Easy filtering by court, time period, and subject matter
+  - Integration with case citation system for proper referencing
+
+- **Student Research Tools**:
+  - Research templates following Indian law school assignment formats
+  - Citation generator for Indian legal citation styles
+  - Research history tracking for project organization
+  - Note-taking system integrated with research results
+  - Compare and contrast feature for analyzing multiple judgments
+  - Concept mapping for understanding legal principle relationships
+  - Project folders for organizing research by assignment or topic
+  - Export options for research results in standard academic formats
+```
 
 ## Agent System Design
 
-LegalHelp employs a sophisticated agent system built on langgraph and Fetch.ai's uAgents framework:
+LegalHelp employs a simplified agent system designed specifically for Indian legal education and practice:
 
 ### Agent Types and Responsibilities
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
-│                         Agent Ecosystem                            │
+│                 Indian Legal Assistant Ecosystem                   │
 └────────────────────────────────────────────────────────────────────┘
 ┌───────────────┐  ┌───────────────┐  ┌───────────────┐  ┌───────────────┐
-│ Research      │  │ Drafting      │  │ Review        │  │ Citation      │
-│ Agent         │  │ Agent         │  │ Agent         │  │ Agent         │
+│ Indian        │  │ Document      │  │ Language      │  │ Citation      │
+│ Research      │  │ Drafting      │  │ Review        │  │ Manager       │
 ├───────────────┤  ├───────────────┤  ├───────────────┤  ├───────────────┤
-│- Case search  │  │- IRAC         │  │- Grammar      │  │- Format       │
-│- Statute      │  │  structuring  │  │  check        │  │  citations    │
-│  lookup       │  │- Argument     │  │- Legal        │  │- Verify       │
-│- Precedent    │  │  generation   │  │  accuracy     │  │  references   │
-│  analysis     │  │- Template     │  │- Logic        │  │- Track        │
-│               │  │  application  │  │  assessment   │  │  sources      │
+│- Indian case  │  │- IRAC         │  │- Grammar      │  │- Format SCC   │
+│  search       │  │  structuring  │  │  check        │  │  citations    │
+│- Indian law   │  │- Template     │  │- Legal        │  │- Verify       │
+│  lookup       │  │  application  │  │  terminology  │  │  Indian       │
+│- Precedent    │  │- Indian       │  │- Hindi/       │  │  references   │
+│  finder       │  │  formatting   │  │  English      │  │               │
 └───────────────┘  └───────────────┘  └───────────────┘  └───────────────┘
         ▲                 ▲                 ▲                  ▲
         │                 │                 │                  │
@@ -583,40 +674,40 @@ LegalHelp employs a sophisticated agent system built on langgraph and Fetch.ai's
                   ▼                ▼                   ▼
           ┌───────────────────────────────────────────────────┐
           │                                                   │
-          │            Orchestrator Agent                     │
+          │            Student Guide Agent                    │
           │                                                   │
           └───────────────────────────────────────────────────┘
-                  ▲                 ▲                  ▲
-                  │                 │                  │
-        ┌─────────┴────────┬────────┴──────────┬──────┘
-        │                  │                   │
-        ▼                  ▼                   ▼
-┌───────────────┐  ┌───────────────┐  ┌───────────────┐
-│ Voice         │  │ UI            │  │ Collaboration │
-│ Interface     │  │ Interface     │  │ Agent         │
-│ Agent         │  │ Agent         │  │               │
-└───────────────┘  └───────────────┘  └───────────────┘
+                  ▲                 ▲                  
+                  │                 │                  
+        ┌─────────┴────────┐        │                 
+        │                  │        │                 
+        ▼                  ▼        ▼                 
+┌───────────────┐  ┌───────────────┐                  
+│ Voice         │  │ User          │                  
+│ Input         │  │ Interface     │                  
+│               │  │               │                  
+└───────────────┘  └───────────────┘                  
+```
 ```
 
 ### Agent Communication Protocol
 
-Agent communication uses the Agent2Agent protocol for secured, privacy-preserving interactions:
+Agent communication uses a simplified, secure protocol for on-device interactions:
 
 ```python
-# Pseudocode for Agent2Agent communication
-class LegalAgent(uagent.Agent):
-    async def communicate(self, target_agent, message, protocol="a2a"):
-        encrypted_payload = self.encrypt(message, target_agent.public_key)
-        signed_payload = self.sign(encrypted_payload)
+# Pseudocode for simplified agent communication
+class IndianLegalAgent(BasicAgent):
+    def communicate(self, target_agent, message):
+        # Simple encryption for on-device security
+        basic_payload = self.encrypt_local(message)
         
-        return await self.send(
-            recipient=target_agent.address,
-            payload=signed_payload,
-            protocol=protocol,
+        return self.send_message(
+            recipient=target_agent,
+            payload=basic_payload,
             metadata={
-                "conversation_id": self.current_task.id,
-                "agent_type": self.agent_type,
-                "priority": message.priority
+                "task_id": self.current_task,
+                "agent_role": self.agent_role,
+                "priority": "normal"
             }
         )
 ```
@@ -686,86 +777,6 @@ class LegalResearchTool(MCPTool):
 mcp_registry.register_tool("legal_research", LegalResearchTool())
 ```
 
-## Indian Legal Diaspora Focus
-
-LegalHelp is specially tailored for the unique needs of the Indian legal community, with particular emphasis on law students and non-technical legal professionals.
-
-### Jurisdiction-Specific Adaptations
-
-- **Indian Legal System Navigation**:
-  - Built-in knowledge of the hierarchical court structure (Supreme Court, High Courts, District Courts)
-  - District and state-specific procedural rules and filing requirements
-  - Specialized templates for Indian legal documents (vakalatnama, affidavits, written statements, etc.)
-  - Coverage of Indian statutes, including Constitution, CrPC, CPC, IPC, and specialized acts
-
-- **Law Student Focus**:
-  - **Exam Preparation Tools**: Case brief generators with IRAC structure specifically for exam answers
-  - **Moot Court Assistant**: Template-based argument structuring for common moot court competitions
-  - **Internship Documentation Helper**: Tools for drafting common documents assigned during internships
-  - **Study Group Integration**: Secure peer-to-peer sharing for collaborative case analysis
-
-- **Language Accessibility**:
-  - Focus on major Indian languages: Hindi, English, Bengali, Tamil, Telugu, and Marathi
-  - Legal terminology translation between English and regional languages
-  - Document templates available in multiple languages
-  - Support for code-switching common in Indian legal documents
-
-### Indian Legal Workflow Optimization
-
-- **Court Schedule Management**:
-  - Built-in cause list tracking for assigned cases
-  - Deadline calculator based on Indian court holidays and procedural timeframes
-  - Template management for routine filings in different court registries
-
-- **Research Adaptation**:
-  - Offline database of Indian case law and bare acts
-  - Citation style following Indian legal conventions
-  - Integration with common Indian legal research materials
-
-- **Data Sovereignty Features**:
-  - Strict compliance with Indian data protection regulations
-  - Enhanced privacy controls for sensitive client data
-  - Option for firm-based data separation and sharing
-
-## Indian Legal Tech Startup Integration
-
-LegalHelp incorporates the best features from leading Indian legal tech startups, adapted for on-device use and simplified for non-technical users.
-
-### Feature Adaptation Strategy
-
-1. **Lexlegis.AI Features**:
-   - Judgment analysis and headnote generation adapted for offline use
-   - Simplified legal research interface with minimal learning curve
-   - Precedent tracking system for case outcome prediction
-
-2. **Draft Bot Pro Integration**:
-   - Template system for common Indian legal documents
-   - Simplified clause library focused on Indian contract law
-   - Document automation with reduced complexity
-
-3. **LawFYI.io Learning**:
-   - Practice-specific legal updates stored locally
-   - Simplified search interface for legal concepts
-   - Offline legal dictionary and explanatory tools
-
-4. **CaseMine Technologies**:
-   - Similar case finding algorithm optimized for on-device use
-   - Visual case relationship mapping with simplified controls
-   - Judgment analysis with key paragraph identification
-
-### Feature Prioritization Matrix
-
-| Feature | Student Value | Practitioner Value | Offline Viability | Priority |
-|---------|--------------|-------------------|------------------|----------|
-| Case Brief Generation | High | Medium | High | P0 |
-| Document Templates | High | High | High | P0 |
-| Legal Research | High | High | Medium | P1 |
-| Citation Management | High | High | High | P0 |
-| Document Automation | Medium | High | High | P1 |
-| Practice Management | Low | High | Low | P2 |
-| Client Communication | Low | Medium | Low | P3 |
-| Billing Integration | Low | Medium | Low | P3 |
-
 ## Development Roadmap
 
 The development plan is structured to maximize progress within the hackathon timeframe:
@@ -802,83 +813,204 @@ The development plan is structured to maximize progress within the hackathon tim
 
 ## Performance Benchmarks
 
-LegalHelp is engineered to perform well on a range of devices commonly used by Indian law students and early-career professionals:
+LegalHelp is engineered for high performance on Snapdragon X Elite hardware:
 
 ### Target Metrics
-- **Document Processing**: <2 seconds per page on mid-range devices
-- **OCR Accuracy**: >90% on standard legal documents
-- **Memory Usage**: <1GB RAM during normal operation
-- **Storage Requirement**: <2GB for core system, 5-10GB with legal database
-- **Battery Impact**: <10% per hour of active use
-- **Offline Performance**: Full functionality without degradation when offline
+- **Brief Generation**: <1 second per page
+- **OCR Accuracy**: >95% on legal documents
+- **Voice Recognition Accuracy**: >98% for legal terminology
+- **Memory Usage**: <2GB RAM during operation
+- **Battery Impact**: <5% per hour of active use
+- **Storage Requirement**: <5GB for core system, ~20GB with full legal database
 
-### Student-Friendly Optimization
-- Lightweight model variants for budget Android devices
-- Progressive loading for lower-end hardware
-- Reduced precision options to conserve battery
-- Session-based caching to minimize repeated processing
-- Background task scheduling during device idle time
-- Option to defer intensive tasks when battery is low
+### Optimization Strategies
+- Model quantization (INT8) for NPU acceleration
+- Batched processing for multi-page documents
+- Incremental rendering for UI responsiveness
+- Progressive loading of database elements
+- Smart caching of frequently used legal references
+- Custom kernels for text processing operations
 
 ## Security & Privacy
 
-Data security and privacy are paramount for legal education and practice, especially in India where data protection awareness is increasing. LegalHelp implements several student-friendly privacy measures:
+Security and privacy are fundamental to LegalHelp's design:
 
-### Privacy-First Design
-- **Complete Data Sovereignty**: All user data and processing stays on-device
-- **Zero Cloud Dependency**: No requirement for cloud storage or processing
-- **No Account Required**: Use without login or personal information
-- **Study Material Protection**: Encryption for sensitive academic documents
-- **Examination Mode**: Special lockdown features for secure exam environments
+### Data Security
+- **Zero Data Transmission**: No data leaves the device
+- **Encrypted Storage**: All documents and databases use AES-256 encryption
+- **Secure Key Management**: Hardware-backed key storage where available
+- **Automatic Wiping**: Option to auto-delete sensitive data after use
 
-### Security Measures for Educational Settings
-- **Simplified Encryption**: Basic but effective document protection with easy passcodes
-- **Study Group Controls**: Permission settings for shared academic materials
-- **Assignment Protection**: Anti-tampering features for submitted work
-- **Citation Tracking**: Attribution preservation to prevent accidental plagiarism
-- **Device Binding**: Option to restrict sensitive documents to registered devices
+### Privacy Measures
+- **Local Processing**: All AI inference runs on-device
+- **Metadata Minimization**: No usage statistics collected
+- **Separation from System**: Sandboxed operation
+- **Secure Collaboration**: Direct peer-to-peer connection with authenticated encryption
 
-### Compliance with Indian Regulations
-- **IT Act Compliance**: Adherence to Indian IT Act provisions
-- **Draft DPDP Alignment**: Forward-looking compliance with emerging data protection laws
-- **Education Institution Policies**: Customizable settings to meet university requirements
-- **Bar Council Ethics**: Alignment with legal professional ethics requirements
-- **Record Keeping**: Audit trails for academic integrity verification
+### Compliance Features
+- **Audit Logging**: Comprehensive, tamper-evident activity logs
+- **Access Controls**: Role-based permissions for document access
+- **Ethical Walls**: Conflict checking and information separation
+- **Retention Policies**: Customizable document retention and destruction
 
-## Future Roadmap for Indian Legal Education
+## Indian Legal Diaspora Focus
 
-LegalHelp is committed to evolving alongside the Indian legal education ecosystem, with a particular focus on law students and early-career professionals. The following roadmap outlines planned enhancements:
+LegalHelp is specifically designed for the Indian legal ecosystem, with dedicated features and optimizations that address the unique challenges and requirements of legal practitioners in India.
 
-### 1. Law Student Success Initiative
-- Integration with standard Indian law curriculum across National Law Universities and state law colleges
-- Specialized modules for competitive exams including Judicial Services and AIBE
-- Internship-focused templates and guidance for top legal internship opportunities
-- Exam performance analytics and personalized improvement suggestions
-- Collaboration with law faculties to create custom study materials
+### Jurisdiction-Specific Adaptations
 
-### 2. Student Community Building
-- Forum for law student collaboration across institutions
-- Peer review system for assignments and moot court preparations
-- Virtual study groups with shared resources and notes
-- Mentorship connections between junior and senior students
-- Direct feedback channels for feature requests from students
+1. **Indian Court Hierarchy Support**
+   - Complete coverage of Supreme Court, High Courts, and District Courts
+   - Specialized tribunals including NCLAT, NCLT, and Consumer Forums
+   - Integration with e-Courts and NJDG (National Judicial Data Grid) data structures
+   - Support for Indian citation formats (AIR, SCC, SCR, etc.)
 
-### 3. Accessibility and Inclusion for All Students
-- Low-resource device optimization for students with budget constraints
-- Enhanced features for differently-abled law students
-- Scholarship programs for access to premium features
-- Offline capability optimization for rural law colleges
-- Expansion to regional language support based on student demographics
+2. **Indian Legal Codes and Statutes**
+   - Comprehensive coverage of Indian legislation (Constitution, IPC, CPC, CrPC, etc.)
+   - State-specific laws and local regulations
+   - Historical amendments and judgments affecting interpretation
+   - Notification and circular tracking for regulatory changes
 
-### 4. Career Development Pathway
-- Resume builder with legal profession templates
-- Interview preparation for legal positions
-- Skill tracking aligned with legal employer requirements
-- Networking tools for professional connections
-- Specialized modules for different career paths (litigation, corporate, academic)
+3. **Multilingual Requirements**
+   - Support for 22 scheduled languages in the Indian Constitution
+   - Priority implementation for Hindi, English, and regional languages
+   - Bilingual document generation (English + regional language)
+   - Script-aware OCR for Devanagari and other Indian scripts
 
-## Conclusion
+4. **Practice-Area Focus**
+   - Specialized modules for common Indian practice areas
+   - Templates for standard Indian legal documents (vakalatnama, affidavits, etc.)
+   - Court-specific formatting requirements by jurisdiction
+   - Local legal customs and procedural variations
 
-LegalHelp represents a transformative approach to legal technology, specifically designed for the unique needs of Indian law students and non-technical legal professionals. By providing a privacy-first, on-device solution that requires minimal technical expertise, LegalHelp addresses the core challenges faced by the Indian legal community while offering powerful tools that enhance legal education and early practice.
+### Indian Legal Workflow Optimization
 
-The simplified feature set focuses on the essentials, eliminating complexity in favor of functionality that directly serves students' academic needs and practitioners' daily workflows. Through ongoing collaboration with Indian legal educational institutions and keeping student success at the center of development, LegalHelp aims to become an invaluable companion throughout the journey from law student to seasoned legal professional.
+1. **Court-Centric Features**
+   - Cause list monitoring and case status tracking
+   - Automated diary and date management per Indian court schedules
+   - E-filing preparation tools for compatible courts
+   - Judge history and bench composition analysis
+
+2. **India-Specific Research Tools**
+   - Focused search across Indian case law (1950-present)
+   - Citation standard compliance (SCC, AIR, etc.)
+   - Legal maxims and principles in Indian jurisprudence
+   - Ratio analysis tailored to Indian judgment structure
+
+3. **Client Management**
+   - Bilingual client communication tools
+   - Fee structures aligned with Indian practice norms
+   - Document authentication tools (digital signatures, stamps)
+   - GST-compliant billing and invoicing
+
+4. **Regulatory Compliance**
+   - Bar Council of India ethics rule integration
+   - RERA, SEBI, and other regulatory frameworks
+   - Privacy compliance with Indian IT Act and data protection laws
+   - Professional standards adherence monitoring
+
+## Indian Legal Tech Startup Integration
+
+LegalHelp draws inspiration from successful Indian legal tech startups while focusing on simplicity and accessibility for non-technical legal professionals. This section analyzes key players in the Indian market and identifies valuable features for integration.
+
+### Comparative Analysis of Indian Legal Tech Solutions
+
+#### 1. **Lexlegis.AI**
+   - **Core Strengths**: AI-powered legal research with Indian case law focus
+   - **Notable Features**:
+     - Natural language search across Indian judgments
+     - Automated citation extraction and validation
+     - Precedent strength scoring for Indian cases
+   - **Integration Opportunities**:
+     - Adopt natural language search patterns while simplifying the interface
+     - Implement citation validation for Indian standard formats
+     - Incorporate precedent strength indicators in search results
+
+#### 2. **Draft Bot Pro**
+   - **Core Strengths**: Document automation for Indian legal workflows
+   - **Notable Features**:
+     - Template library for Indian court documents
+     - Clause suggestion based on jurisdiction and case type
+     - Version control with India-specific compliance tracking
+   - **Integration Opportunities**:
+     - Simplify template selection with practice area categorization
+     - Implement clause suggestions with plain language explanations
+     - Create streamlined version tracking with minimal technical overhead
+
+#### 3. **LawFYI.io**
+   - **Core Strengths**: Legal research assistant with conceptual mapping
+   - **Notable Features**:
+     - Topic modeling for Indian legal concepts
+     - Visual relationship mapping between judgments
+     - Automated summary generation for complex cases
+   - **Integration Opportunities**:
+     - Implement simplified concept maps with touch-friendly navigation
+     - Provide one-tap case summaries with key holding extraction
+     - Create practice area-specific content organization
+
+#### 4. **CaseMine**
+   - **Core Strengths**: AI-powered legal analytics with predictive capabilities
+   - **Notable Features**:
+     - CaseIQ for finding related Indian precedents
+     - Judicial analytics for outcome prediction
+     - Citation network visualization
+   - **Integration Opportunities**: 
+     - Implement streamlined related case suggestion
+     - Create simplified outcome likelihood indicators
+     - Provide basic citation network visualization with minimal complexity
+
+### Feature Adaptation Strategy
+
+To maintain LegalHelp's focus on simplicity while incorporating valuable features from these platforms, we will implement the following adaptation strategy:
+
+1. **Interface Simplification**
+   - Reduce complex UI elements to essential functions
+   - Implement progressive disclosure for advanced features
+   - Use familiar metaphors from physical legal practice
+
+2. **Workflow Integration**
+   - Embed advanced features within natural workflow steps
+   - Minimize mode-switching between research and drafting
+   - Provide contextual help at decision points
+
+3. **Language Accessibility**
+   - Replace technical terminology with legal practitioner vocabulary
+   - Offer bilingual interface options (English + regional languages)
+   - Provide plain language explanations of AI-driven suggestions
+
+4. **Feature Prioritization Matrix**
+
+| Feature Category | Implementation Priority | Simplification Approach |
+|------------------|-------------------------|-------------------------|
+| Case Research    | High                    | Focus on direct precedent relevance rather than complex networks |
+| Document Creation | High                   | Emphasize templates with guided customization |
+| Legal Analytics  | Medium                  | Simplify to basic insights with visual indicators |
+| Citation Management | High                 | Automate formatting with minimal user intervention |
+| Multilingual Support | High                | Prioritize document generation in official court languages |
+
+By thoughtfully integrating and simplifying these features, LegalHelp will provide Indian legal professionals with powerful capabilities that remain accessible and intuitive, regardless of technical expertise.
+
+## Future Roadmap for Indian Legal Diaspora
+
+LegalHelp is committed to continuous improvement and adaptation to the evolving needs of Indian legal professionals. The following roadmap outlines planned enhancements and community engagement strategies:
+
+### 1. Expansion of Indian Legal Content
+- Ongoing addition of state-specific statutes, rules, and local regulations
+- Integration with new Indian court e-filing systems as they are adopted
+- Regular updates to templates for emerging legal document types (e.g., digital evidence affidavits)
+- Collaboration with Indian law schools for academic content and moot court modules
+
+### 2. Community-Driven Feature Development
+- User feedback channels for practicing advocates, law students, and court staff
+- Annual user survey to prioritize new features and language support
+- Beta testing program with select Indian bar associations
+- Open call for regional legal experts to contribute to template and workflow design
+
+### 3. Accessibility and Inclusion
+- Enhanced support for visually impaired and differently-abled legal professionals
+- Voice-first workflows for rural and low-literacy users
+- Expansion of regional language support based on user demand
+- Partnership with legal aid organizations to provide subsidized access
+
+### 4. Regulatory and Compliance Updates
+- Automated monitoring of Indian Supreme Court and High Court notifications
